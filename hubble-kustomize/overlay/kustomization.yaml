@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: helloworld
+bases:
+- ../base
+resources:
+- namespace.yaml
+- ingress.yaml
+patches:
+- path: configMap.yaml
+- path: service.yaml
+- path: deployment.yaml
